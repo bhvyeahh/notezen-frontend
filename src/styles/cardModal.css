@@ -1,0 +1,103 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.badge.easy {
+  background: #22c55e;
+}
+
+.badge.medium {
+  background: #facc15;
+  color: #000;
+}
+
+.badge.hard {
+  background: #ef4444;
+}
+
+.badge.unknown {
+  background: #6b7280;
+}
+/* 📱 Responsive Only */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .close-btn {
+    font-size: 1.1rem;
+    top: 8px;
+    right: 10px;
+  }
+
+  .badge {
+    padding: 3px 7px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 92%;
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    font-size: 1rem;
+    top: 6px;
+    right: 8px;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
+}

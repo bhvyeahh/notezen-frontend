@@ -1,0 +1,275 @@
+/* 🌞 Light Theme (Default) */
+:root {
+  --page-bg: #f8fafc;
+  --nav-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  /* Heatmap Colors (Light) */
+  --heatmap-1: #bbf7d0;
+  --heatmap-2: #86efac;
+  --heatmap-3: #4ade80;
+  --heatmap-4: #22c55e;
+}
+
+/* 🌙 Dark Theme */
+body.dark-mode {
+  --page-bg: #0f172a;
+  --nav-bg: #1e293b;
+  --text-main: #f1f5f9;
+  --text-sub: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+  --shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+
+  /* Heatmap Colors (Dark) */
+  --heatmap-1: #14532d;
+  --heatmap-2: #15803d;
+  --heatmap-3: #16a34a;
+  --heatmap-4: #22c55e;
+}
+
+/* 🌍 Page Base */
+.dashboard-page {
+  background-color: var(--page-bg);
+  min-height: 100vh;
+  color: var(--text-main);
+  transition: background 0.4s ease, color 0.4s ease;
+  box-sizing: border-box;
+  padding-top: 70px; /* to prevent navbar overlap */
+}
+
+/* 🧭 Navbar Fix */
+.nav-dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* 🧱 Main Container — Grid Layout */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr;
+  gap: 1.8rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 🧩 Left Section (Main content) */
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 📊 Right Section (Widgets) */
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 340px;
+  width: 100%;
+}
+
+/* 🧺 Common Widget/Card Styles */
+.placeholder-box {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-sub);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+.placeholder-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.placeholder-box h3 {
+  font-size: 1rem;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.placeholder-box p {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+/* 🧭 Dashboard Actions */
+.dashboard-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem auto 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.btn-add-card {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: -364;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-add-card:hover {
+  background: var(--accent-hover);
+  transform: scale(1.03);
+}
+
+/* 🪄 Global Transitions */
+* {
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* 🌈 RESPONSIVENESS */
+/* =============== */
+
+/* 💻 Tablets */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .dashboard-right {
+    max-width: 300px;
+  }
+
+  .placeholder-box {
+    padding: 1.2rem;
+  }
+}
+
+/* 📱 Small Screens */
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+    gap: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .dashboard-right {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .dashboard-left {
+    order: 1;
+  }
+
+  .placeholder-box {
+    padding: 1rem;
+  }
+
+  .placeholder-box h3 {
+    font-size: 0.9rem;
+  }
+
+  .placeholder-box p {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-actions {
+    justify-content: center;
+    margin-top: 1rem;
+    position: sticky;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 1rem;
+  }
+
+  .btn-add-card {
+    width: 90%;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+  }
+
+  .btn-add-card:active {
+    transform: scale(0.97);
+  }
+}
+
+/* 📲 Phones */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .placeholder-box {
+    border-radius: 10px;
+    padding: 0.9rem;
+  }
+
+  .placeholder-box h3 {
+    font-size: 0.85rem;
+  }
+
+  .placeholder-box p {
+    font-size: 0.75rem;
+  }
+
+  .btn-add-card {
+    width: 92%;
+    font-size: 0.95rem;
+    padding: 0.9rem;
+    z-index: -999;
+  }
+}
+
+/* 🧠 Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🧩 Fix: Hide sticky button when modal or overlay is open */
+.modal-open .dashboard-actions {
+  position: static !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* 🧠 Ensure modals appear above everything */
+.cardform-overlay,
+.modal-overlay,
+.delete-overlay,
+.filter-overlay {
+  z-index: 2000 !important;
+}
+
+.dashboard-actions {
+  z-index: 900; /* ✅ below modals */
+}

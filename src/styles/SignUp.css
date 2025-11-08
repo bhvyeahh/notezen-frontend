@@ -1,0 +1,266 @@
+/* ======================= */
+/* 🌑 MAIN CONTAINER       */
+/* ======================= */
+.signup-page-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ======================= */
+/* 🌈 BLOB BACKGROUND LEFT */
+/* ======================= */
+.blob-background {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.blob-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.7;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+.blob-one {
+  width: 400px;
+  height: 450px;
+  background: #ff6ec4;
+  top: 10%;
+  left: 10%;
+}
+
+.blob-two {
+  width: 350px;
+  height: 350px;
+  background: #7873f5;
+  top: 35%;
+  left: 50%;
+}
+
+.blob-three {
+  width: 300px;
+  height: 400px;
+  background: radial-gradient(circle, #42e695, #3bb2b8);
+  top: 55%;
+  left: 15%;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.blob-background img {
+  width: 280px;
+  height: auto;
+  z-index: 2;
+  opacity: 1;
+  position: relative;
+}
+
+/* ======================= */
+/* 🧾 FORM SECTION RIGHT   */
+/* ======================= */
+.signup-form-section {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 460px;
+  background: rgba(20, 20, 20, 0.65);
+  padding: 3rem 3rem 2rem 3rem;
+  border-radius: 16px;
+  margin: auto;
+  box-shadow: 0 8px 32px rgba(255, 0, 80, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid #222;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signup-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.signup-header h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.signup-header a {
+  color: #ff6ec4;
+  text-decoration: none;
+}
+
+/* ======================= */
+/* ✏️ FORM INPUTS          */
+/* ======================= */
+.signup-form span {
+  font-size: 14px;
+  color: #ccc;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.signup-form input:focus {
+  box-shadow: 0 0 6px #ff00ff;
+}
+
+/* ======================= */
+/* 🎨 BUTTON STYLING       */
+/* ======================= */
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff004c, #ff6a00);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.signup-form button:hover {
+  transform: scale(1.03);
+}
+
+.error-text {
+  color: #ff4d6d;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* ======================= */
+/* 📱 RESPONSIVENESS FIXES */
+/* ======================= */
+
+/* --- Tablet (max 1024px) --- */
+@media (max-width: 1024px) {
+  .signup-page-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 0;
+  }
+
+  .blob-background {
+    width: 100%;
+    height: 200px;
+  }
+
+  .blob-background img {
+    width: 180px;
+  }
+
+  .signup-form-section {
+    max-width: 420px;
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .blob-shape {
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+}
+
+/* --- Mobile (max 600px) --- */
+@media (max-width: 600px) {
+  .blob-background {
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blob-background img {
+    width: 120px;
+  }
+
+  .blob-shape {
+    display: none;
+  }
+
+  .signup-form-section {
+    width: 90%;
+    padding: 1.8rem 1.4rem;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.15);
+  }
+
+  .signup-header h2 {
+    font-size: 22px;
+  }
+
+  .signup-header h3 {
+    font-size: 13px;
+  }
+
+  .signup-form input {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .signup-form button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+/* --- Tiny Phones (max 400px) --- */
+@media (max-width: 400px) {
+  .signup-header h2 {
+    font-size: 20px;
+  }
+
+  .signup-header h3 {
+    font-size: 12px;
+  }
+
+  .signup-form-section {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
