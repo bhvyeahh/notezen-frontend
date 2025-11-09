@@ -13,7 +13,7 @@ const Signin = () => {
 
   // ✅ Base API URL from environment
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
-
+  console.log("🌍 API Base URL:", import.meta.env.VITE_API_BASE_URL);
   // 🔒 Redirect if already logged in
   useEffect(() => {
     const token = localStorage.getItem("token");

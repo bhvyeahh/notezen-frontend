@@ -17,6 +17,7 @@ const Signup = () => {
 
   // ✅ Base API URL from .env
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
+  console.log("🌍 API Base URL:", import.meta.env.VITE_API_BASE_URL);
 
   // 🔒 Redirect if already logged in
   useEffect(() => {
